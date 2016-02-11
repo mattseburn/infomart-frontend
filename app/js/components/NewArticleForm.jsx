@@ -23,8 +23,10 @@ class NewArticleForm extends React.Component {
 
     render() {
         return <form onSubmit={ this.createArticle.bind(this) }>
-                <input type="text" ref="title" />
-                <input type="text" ref="content" />
+                <label for="title">Title</label>
+                <input type="text" ref="title" id="title" />
+                <label for="content">Content</label>
+                <input type="text" ref="content" id="content" />
                 <button>Add new article</button>
             </form>;
     }

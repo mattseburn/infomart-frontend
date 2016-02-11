@@ -5,7 +5,7 @@ import NewArticleForm from './NewArticleForm';
 
 let getArticlesState = () => {
     return {
-        items: ArticlesStore.getArticles()
+        articles: ArticlesStore.getArticles()
     }
 }
 
@@ -29,16 +29,16 @@ class AppRoot extends React.Component {
 
     render() {
         let _this = this;
-        let items = ArticlesStore.getArticles();
-        let itemHtml = items.map(( article ) => {
+        let articles = ArticlesStore.getArticles();
+        let articleHtml = articles.map(( article ) => {
             return <article key={ article.id }>
                     <h2>{ article.title }</h2>
                     <section>{ article.content }</section>
                 </article>;
         });
         return <div>
-                { itemHtml }
                 <NewArticleForm />
+                { articleHtml }
             </div>;
     }
 };
